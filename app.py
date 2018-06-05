@@ -6,7 +6,7 @@ import os
 import sys
 sys.path.insert(0, '/modules')
 
-from modules import menu, jurosSimples, jurosComposto
+from modules import menu, jurosSimples, jurosComposto, comercialSimples
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
         if isNumber(opc):
             opc = int(opc)
             isValid = True
-
+            # JUROS SIMPLES
             if(opc == 1):
                 clean()
                 print("Opção escolhida: JUROS SIMPLES")
@@ -56,6 +56,7 @@ def main():
                         isValid = False
                 else:
                     isValid = False
+            # JUROS COMPOSTO
             elif(opc == 2):
                 clean()
                 print("Opção escolhida: JUROS COMPOSTOS")
@@ -135,6 +136,92 @@ def main():
                 print("1 - Comercial / Por Fora")
                 print("2 - Racional  / Por dentro")
                 opc = input("> ")
+                # COMERCIAL / POR FORA
+                if(opc == 1):
+                    clean()
+                    menu.descontoComercialSimples()
+                    print("Informe os dados que você possui")
+                    print("Caso não possua algum dos dados a seguir pressione enter")
+                    d = raw_input("D = ")
+                    n = raw_input("N = ")
+                    print("Não divida por 100")
+                    i = raw_input("i = ")
+                    t = raw_input("t = ")
+                    print("\n")
+
+                    # DESCONTO COMERCIAL
+                    if(d == ""):
+                        d = comercialSimples.desconto(n, i, t)
+                        if(d != ""):
+                            print("DESCONTO COMERCIAL = $"+str(d))
+                        else:
+                            print("Impossível calcular o DESCONTO COMERCIAL!")
+                    # VALOR NOMINAL
+                    if(n == ""):
+                        n = comercialSimples.valNominal(d, i, t)
+                        if(n != ""):
+                            print("VALOR NOMINAL = $%.2f" % n)
+                        else:
+                            print("Impossível calcular o VALOR NOMINAL!")
+                    # TAXA
+                    if(i == ""):
+                        i = comercialSimples.taxa(d, n, t)
+                        if(i != ""):
+                            print("TAXA = %.2f%%" % (i*100))
+                        else:
+                            print("Impossível calcular a TAXA !")
+                    # TEMPO
+                    if(t == ""):
+                        t = comercialSimples.tempo(d, n, i)
+                        if(t != ""):
+                            print("TEMPO = "+str(t))
+                        else:
+                            print("Impossível calcular o TEMPO!")
+                # RACIONAL / POR DENTRO
+                if(opc == 2):
+                    clean()
+                    menu.descontoComercialSimples()
+                    print("Informe os dados que você possui")
+                    print("Caso não possua algum dos dados a seguir pressione enter")
+                    d = raw_input("D = ")
+                    n = raw_input("N = ")
+                    print("Não divida por 100")
+                    i = raw_input("i = ")
+                    t = raw_input("t = ")
+                    print("\n")
+
+                    # DESCONTO COMERCIAL
+                    if(d == ""):
+                        d = comercialSimples.desconto(n, i, t)
+                        if(d != ""):
+                            print("DESCONTO COMERCIAL = $"+str(d))
+                        else:
+                            print("Impossível calcular o DESCONTO COMERCIAL!")
+                    # VALOR NOMINAL
+                    if(n == ""):
+                        n = comercialSimples.valNominal(d, i, t)
+                        if(n != ""):
+                            print("VALOR NOMINAL = $%.2f" % n)
+                        else:
+                            print("Impossível calcular o VALOR NOMINAL!")
+                    # TAXA
+                    if(i == ""):
+                        i = comercialSimples.taxa(d, n, t)
+                        if(i != ""):
+                            print("TAXA = %.2f%%" % (i*100))
+                        else:
+                            print("Impossível calcular a TAXA !")
+                    # TEMPO
+                    if(t == ""):
+                        t = comercialSimples.tempo(d, n, i)
+                        if(t != ""):
+                            print("TEMPO = "+str(t))
+                        else:
+                            print("Impossível calcular o TEMPO!")
+                elif(opc == 2):
+                    print("opc 2")
+                else:
+                    isValid = False
             else:
                 isValid = False
         else:

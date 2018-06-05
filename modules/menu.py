@@ -9,6 +9,14 @@ def jurosComposto():
     print("t: TEMPO (meses)\n")
 
 
+def descontoComercialSimples():
+    print("Considerando D = N*i*t onde,")
+    print("D = Desconto Comercial")
+    print("N = Valor Nominal")
+    print("i = Taxa")
+    print("t = Tempo")
+
+
 def jurosSimples():
     print("Considerando j = cit")
     print("E, m = c+j")
