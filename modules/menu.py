@@ -38,7 +38,7 @@ def jurosSimples():
     print("1- j \t 2- c")
     print("3- i \t 4- t")
     print("5- m")
-    return raw_input()
+    return input()
 
 
 def principal():
@@ -46,4 +46,4 @@ def principal():
     print("1- JUROS SIMPLES")
     print("2- JUROS COMPOSTO")
     print("3- DESCONTO SIMPLES")
-    return raw_input()
+    return input()

@@ -46,12 +46,12 @@ def montante():
     print("Calculando MONTANTE")
     print("Informe os seguintes dados:")
     print("Caso não saiba algum destes responda '?'")
-    j = raw_input("Juros: ")
+    j = input("Juros: ")
     if(j == "?"):
         j = juros()
         print("\nJUROS: $"+str(j))
 
-    c = raw_input("Capital: ")
+    c = input("Capital: ")
     if(c == "?"):
         c = capital()
         print("\nCAPITAL: $"+str(c))

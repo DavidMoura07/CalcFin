@@ -64,34 +64,34 @@ def main():
                 menu.jurosComposto()
                 print("Informe os dados que você possui")
                 print("Caso não possua algum dos dados a seguir pressione enter")
-                m = raw_input("Montante: ")
-                j = raw_input("Juros: ")
-                c = raw_input("Capital: ")
+                m = input("Montante: ")
+                j = input("Juros: ")
+                c = input("Capital: ")
                 emMeses = input(
                     "Sua taxa está em meses?\n1 - SIM \t 2 - NÃO\n")
-                if(emMeses == 1):
+                if(emMeses == "1"):
                     print("Ótimo, não a divida por 100 entao, blz?")
-                    i = raw_input("Qual o valor da taxa? ")
+                    i = input("Qual o valor da taxa? ")
                 else:
                     print("Então vamos converte-la!")
-                    i = raw_input(
+                    i = input(
                         "qual o valor da taxa? Não divida por 100 ok?!\n")
                     print("Agora me diga, sua taxa esta em:")
                     print("1 - dias")
                     print("2 - meses")
                     print("3 - anos")
                     tipo = input("> ")
-                    if(tipo == 1):
+                    if(tipo == "1"):
                         period = input("Hum... Quantos dias? ")
-                    elif(tipo == 2):
+                    elif(tipo == "2"):
                         period = input("Hum... Quantos meses? ")
-                    elif(tipo == 3):
+                    elif(tipo == "3"):
                         period = input("Hum... Quantos anos? ")
                     i = jurosComposto.taxaEquivalenteMensal(i, tipo, period)
                     print(
                         "Exelente! sua taxa equivalente é de %0.2f%% ao mês!" % (i*100))
 
-                t = raw_input("Tempo: ")
+                t = input("Tempo: ")
                 print("\n")
 
                 # MONTANTE
@@ -138,16 +138,16 @@ def main():
                 print("2 - Racional  / Por dentro")
                 opc = input("> ")
                 # COMERCIAL / POR FORA
-                if(opc == 1):
+                if(opc == "1"):
                     clean()
                     menu.descontoComercialSimples()
                     print("Informe os dados que você possui")
                     print("Caso não possua algum dos dados a seguir pressione enter")
-                    d = raw_input("Dc = ")
-                    n = raw_input("N = ")
+                    d = input("Dc = ")
+                    n = input("N = ")
                     print("Não divida por 100")
-                    i = raw_input("i = ")
-                    t = raw_input("t = ")
+                    i = input("i = ")
+                    t = input("t = ")
                     print("\n")
 
                     # DESCONTO COMERCIAL
@@ -179,17 +179,17 @@ def main():
                         else:
                             print("Impossível calcular o TEMPO!")
                 # RACIONAL / POR DENTRO
-                elif(opc == 2):
+                elif(opc == "2"):
                     clean()
                     menu.descontoRacionalSimples()
                     print("Informe os dados que você possui")
                     print("Caso não possua algum dos dados a seguir pressione enter")
-                    d = raw_input("Dr = ")
-                    n = raw_input("N = ")
+                    d = input("Dr = ")
+                    n = input("N = ")
                     print("Não divida por 100")
-                    i = raw_input("i = ")
-                    t = raw_input("t = ")
-                    c = raw_input("C = ")
+                    i = input("i = ")
+                    t = input("t = ")
+                    c = input("C = ")
                     print("\n")
 
                     # DESCONTO COMERCIAL
