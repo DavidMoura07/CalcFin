@@ -10,11 +10,20 @@ def jurosComposto():
 
 
 def descontoComercialSimples():
-    print("Considerando D = N*i*t onde,")
-    print("D = Desconto Comercial")
+    print("Considerando Dc=N*i*t onde,")
+    print("Dc = Desconto Comercial")
     print("N = Valor Nominal")
     print("i = Taxa")
     print("t = Tempo")
+
+
+def descontoRacionalSimples():
+    print("Considerando Dr=(N*i*t)/(100+i*t) & N=C(1+i*t) & Dr= N-C")
+    print("Dr = Desconto Racional")
+    print("N = Valor Nominal")
+    print("i = Taxa")
+    print("t = Tempo")
+    print("C = Valor Atual")
 
 
 def jurosSimples():
